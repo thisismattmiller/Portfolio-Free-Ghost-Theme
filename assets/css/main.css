@@ -42,20 +42,20 @@ body {
 	box-sizing: border-box;
 }
 a {
-	color: #5cc1a9;
+	color: rgba(231, 76, 60,1.0);
 	text-decoration: none;
 }
 a:active,
 a:focus,
-a:hover { color: #363636; }
+a:hover { color: rgba(231, 76, 60,1.0); }
 img { max-width: 100%; }
 h1,
 h2,
 h3,
 h4,
 h5,
-h6 { 
-	color: #363636;
+h6 {
+	color: rgba(231, 76, 60,1.0);
 	font-weight: 600;
 }
 h2 { font-size: 28px; }
@@ -80,7 +80,7 @@ a,
 	-webkit-transition: all .75s ease-out;
 	-moz-transition: all .75s ease-out;
 	-ms-transition: all .75s ease-out;
-	transition: all .75s ease-out;	
+	transition: all .75s ease-out;
 }
 
 /* Containers */
@@ -131,9 +131,53 @@ main {
 .logo {
 	background: #fff;
 	color: #000;
-	height: 64px;
+	min-height: 100px;
 	text-align: center;
+
 }
+
+.logo strong { color: rgba(231, 76, 60,1.0); font-size: 150%; }
+
+
+.header-container{
+	margin-left: auto;
+	margin-right: auto;
+	width: 75%;
+	position: relative;
+}
+
+.me{
+
+	border-radius: 200px 200px 200px 200px;
+	-moz-border-radius: 200px 200px 200px 200px;
+	-webkit-border-radius: 200px 200px 200px 200px;
+	height: 100px;
+  	width: 100px;
+  	float: left;
+
+}
+
+.tag-nav::after{ content: ' - '}
+.tag-nav:last-of-type::after{ content: ''}
+
+#tags{ margin-top: 20px;}
+
+
+.sandwich{
+	position: absolute;
+	font-size: 125%;
+	bottom: -50px;
+  	left: -10px;
+  	opacity: 0;
+	transition: all 0.5s;
+}
+
+.sandwich:hover{
+	transform: scale(5);
+}
+.me-link:hover .sandwich { opacity: 1; }
+
+
 .logo__image {
 
 }
@@ -157,7 +201,7 @@ main {
 .logo__link:active,
 .logo__link:focus,
 .logo__link:hover {
-	color: #5cc1a9;
+	color: rgba(231, 76, 60,1.0);
 }
 
 /*---------------------------------
@@ -182,13 +226,13 @@ main {
 .menu__item:active,
 .menu__item:focus,
 .menu__item:hover {
-	color: #5cc1a9;
+	color: rgba(231, 76, 60,1.0);
 }
 
 .menu__item--active {
-	border-color: #5cc1a9;
+	border-color: rgba(231, 76, 60,1.0);
 	border-radius: 2px;
-	color: #5cc1a9;
+	color: rgba(231, 76, 60,1.0);
 }
 
 /*---------------------------------
@@ -239,7 +283,7 @@ main {
 }
 
 .social__icon:hover:before {
-	color: #5cc1a9;
+	color: rgba(231, 76, 60,1.0);
 }
 
 .social__icon:before {
@@ -275,7 +319,7 @@ main {
 .pagination__item--link:active,
 .pagination__item--link:focus,
 .pagination__item--link:hover {
-	color: #5cc1a9;
+	color: rgba(231, 76, 60,1.0);
 }
 .pagination__item--older {
 	padding: 0 25px 0 0;
@@ -306,11 +350,14 @@ main {
 3. Post items
 ----------------------------------*/
 
+
+
 .post__wrapper {
 	float: left;
 	height: 416px;
 	overflow: hidden;
 	padding: 18px 10px;
+	position: relative;
 	-webkit-perspective: 500;
 	-moz-perspective: 500;
 	-ms-perspective: 500;
@@ -353,10 +400,10 @@ main {
 	-ms-transform-origin: 0 50%;
 	-o-transform-origin: 0 50%;
 	transform-origin: 0 50%;
-	-webkit-transition: all .5s ease-out;
-	-moz-transition: all .5s ease-out;
-	-ms-transition: all .5s ease-out;
-	transition: all .5s ease-out;
+	-webkit-transition: all .20s ease-out;
+	-moz-transition: all .20s ease-out;
+	-ms-transition: all .20s ease-out;
+	transition: all .20s ease-out;
 }
 
 .post__wrapper_helper--animated {
@@ -433,7 +480,7 @@ main {
 .post__link:active,
 .post__link:focus,
 .post__link:hover {
-	color: #5cc1a9;
+	color: rgba(231, 76, 60,1.0);
 }
 
 .post__date {
@@ -462,7 +509,7 @@ main {
 	bottom: 0;
 	color: #b5b5b5;
 	font-size: 11px;
-	height: 68px;
+	height: 70px;
 	padding: 0 30px 0 76px;
 	position: absolute;
 	-webkit-transition: all .3s ease-out;
@@ -480,7 +527,7 @@ main {
 
 .post__meta:before {
 	bottom: 0;
-	color: #5cc1a9;
+	color: rgba(231, 76, 60,1.0);
 	content: "i";
 	display: block;
 	font-size: 24px;
@@ -575,7 +622,7 @@ main {
 
 .post__navigation {
 	height: 54px;
-	left: 0;	
+	left: 0;
 	position: fixed;
 	top: 50%;
 	width: 54px;
@@ -695,6 +742,15 @@ ul {
 	.pagination {
 		margin: 10px 0 0 0;
 	}
+
+	.post__tag{
+		line-height: 46px;
+	}
+	.post__meta:before {
+		line-height: 50px;
+
+	}
+
 }
 
 @media (max-width: 900px) {
@@ -707,6 +763,9 @@ ul {
 	.post__wrapper--subpage {
 		max-width: 95%;
 	}
+
+
+
 }
 
 @media (max-width: 700px) {
@@ -736,8 +795,8 @@ ul {
 	}
 
 	.menu__item--active {
-		background: #5cc1a9;
-		border-color: #5cc1a9;
+		background: rgba(231, 76, 60,1.0);
+		border-color: rgba(231, 76, 60,1.0);
 		color: #fff;
 	}
 
@@ -794,7 +853,7 @@ ul {
 	}
 }
 
-@media (max-width: 480px) { 
+@media (max-width: 480px) {
 	body {
 		font-size: 14px;
 	}
@@ -805,5 +864,5 @@ ul {
 	.post__wrapper[data-cols="3"],
 	.post__wrapper[data-cols="4"] {
 		width: 100%;
-	}	
+	}
 }
